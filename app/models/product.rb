@@ -1,8 +1,8 @@
-class Product < ApplicationRecord::Base
+class Product < ActiveRecord::Base
 
   validates :code, presence: true, length: { maximum: 10 }
   validates :name, presence: true, length: { maximum: 50 }
-  validates :name_kana, kana: true, length: { maximum: 50 }
+  validates :name_kana, length: { maximum: 50 }
 
   validates :price, presence: true,
             # numericality:は数値のみ許可する際に使用。整数のみ、０以上の正の数のみ
